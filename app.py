@@ -10,7 +10,7 @@ st.set_page_config(page_title="📊 PDF → PPT 슬라이드 생성기")
 st.title("🧠 GPT 기반 ppt 슬라이드 자동 생성")
 
 pdf_file = st.file_uploader("📄PDF 파일 업로드", type="pdf")
-template_path = "templates/atd_template.pptx"
+template_path = "templates/ppt_template.pptx"
 prompt_input = st.text_area("✍️ GPT 프롬프트", """
 당신은 교육 및 연구 내용을 한국어로 요약하고 시각화하는 슬라이드 전문가입니다.
 지금부터 제공하는 영어 논문 PDF의 내용을 기반으로 다음 기준에 따라 PPT 콘텐츠를 구성해주세요:
