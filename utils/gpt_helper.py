@@ -10,7 +10,10 @@ def summarize_text_to_slides(text, instruction):
     GPT에게 텍스트와 프롬프트를 입력하여 슬라이드 형식 응답을 생성합니다.
     """
     messages = [
-        {"role": "system", "content": "당신은 ATD25의 세션 자료를 기반으로 핵심 메시지, 적용 사례, 전략적 의미, 수치 근거를 구조화하여 설득력 있는 발표 슬라이드를 구성하는 HRD전문가입니다."},
+        {"role": "system", "content":
+         "당신은 영어 논문을 한국어로 번역 및 요약하여 발표 슬라이드를 구성하는 슬라이드 콘텐츠 기획 전문가입니다. "
+         "논문을 읽고 핵심 메시지를 뽑아내며, 각 장(Introduction, Methods, Results, Discussion 등)의 내용을 "
+         "적절한 키워드와 함께 실무자가 이해할 수 있는 방식으로 정리할 수 있어야 합니다. 모든 내용은 한국어로 작성하세요."},
         {"role": "user", "content": f"{instruction.strip()}\n\n{text.strip()}"}
     ]
     response = client.chat.completions.create(
